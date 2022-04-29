@@ -31,7 +31,7 @@
                 </nav>
                 <div class="contacts list">
                     <div class="mail-tel-cont">
-                        <li>
+                        <li class="contacts-mail-tel">
                         <a href="mailto:mailinfo@devstudio.com" class="contacts-mail mail-link link">
                             <svg class="mail-icon" width="16" height="12" >
                                 <use href="./images/icons/icons.svg#icon-mail"></use>
@@ -40,7 +40,7 @@
                         </li>
                     </div>
                     <div class="mail-mail-cont">
-                        <li>
+                        <li class="class="contacts-mail-tel"">
                             <a href="tel:+380961111111" class="contacts-tel mail-link link">
                             <svg class="tel-icon" width="10" height="16" >
                                 <use href="./images/icons/icons.svg#icon-tel"></use>
@@ -56,7 +56,7 @@
         <section class="section section-slogan">
             <div class="container container-slogan">
                 <h1 class="slogan">Эффективные решения для вашего бизнеса</h1>
-                    <button type="button" class="btn-order-service">Заказать услугу</button>
+                    <button type="button" class="btn-order-service" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <!--Section2-->
@@ -108,24 +108,30 @@
             <div class="container container-classes-title">
                  <h2 class="classes-title">Чем мы занимаемся</h2>
                  <ul class="classes-image list">
-                     <div class="">
-                         <h3 class="title-image">
-                            Десктопные приложения
-                         </h3>
-                        <li class="image"><img src="./images/img-w1.jpg" alt="Рабочий стол" width="370" height="294"> </li>
-                    </div>
-                    <div class="">
-                        <h3 class="title-image">
-                            Мобильные приложения
-                        </h3>
-                        <li class="image"><img src="./images/img-w2.jpg" alt="Цветовая схема" width="370" height="294"> </li>
-                    </div>
-                    <div class="">
-                        <h3 class="title-image">
-                            Дизайнерские решения
-                        </h3>
-                        <li class="image"><img src="./images/img-w3.jpg" alt="Ноутбук" width="370" height="294"></li>
-                    </div>
+                    <li class="image">
+                        <div class="job-title">
+                            <img src="./images/img-w1.jpg" alt="Рабочий стол" width="370" height="294">
+                            <p class="title-image">
+                                Десктопные приложения
+                            </p>
+                        </div>
+                    </li>
+                    <li class="image">
+                        <div class="job-title">
+                            <img src="./images/img-w2.jpg" alt="Цветовая схема" width="370" height="294"> 
+                            <h3 class="title-image">
+                                Мобильные приложения
+                            </h3>
+                        </div>
+                    </li>
+                    <li class="image">
+                        <div class="job-title">
+                            <img src="./images/img-w3.jpg" alt="Ноутбук" width="370" height="294">
+                            <h3 class="title-image">
+                                Дизайнерские решения
+                            </h3>
+                        </div>
+                    </li>
                  </ul> 
              </div>
         </section>
@@ -383,5 +389,17 @@
                 </div>
             </div>
         </footer>
+        <div  class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <button type="button" class="modal-close" data-modal-close>
+                    <a href=""class="cross-icon-link link"></a>
+                    <svg class="cross-icon" width="11" height="11" >
+                        <use href="./images/icons/icons.svg#icon-Vector-1"></use>
+                    </svg>
+                    </a>
+                </button>
+            </div>
+        </div>
+        <script src="./js/modal.js"></script>
     </body>
 </html>

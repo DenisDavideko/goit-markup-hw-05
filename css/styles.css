@@ -98,17 +98,14 @@ html{
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
-  padding-bottom: 32px; 
+  padding-bottom: 12px; 
 }
 .menu-link{
   margin: 0 auto;
   padding-top: 32px;
   padding-bottom: 32px;
   transition:color 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  /* border: 2px #2196f3; */
-  /* border-radius: 2px #2196F3; */
-  /* outline:  1px solid #2fd474; */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  
 }
 
 .menu-link:not(:last-child){
@@ -123,12 +120,23 @@ html{
 .menu .link:focus,
 .link:active {
   color:var(--color-hover);
-  /* border-radius: 2px solid #2196F3; */
-  /* border: 2px #2196f3; */
-  /* outline:  1px solid #2fd474; */
+
 }
-.menu-link.current {
-  color: var(--color-hover);  
+.menu-link.current::after{
+  display: inline-block; 
+  position:relative;
+  content: ''; 
+  left: 0;
+  top: 18.5px;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  border-bottom:  4px  solid #2196F3 ;
+  margin:0 auto;
+}
+
+.menu-link.current{
+  color: var(--color-hover);
 }
 
 /* ------------------ contacts----------------*/
@@ -143,16 +151,21 @@ html{
   display: flex;
   
 }
-/*.mail-mail-cont,.tel-icon{
-  transition:color 3000ms ;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}*/
+.contacts-mail,.contacts-tel{
+  transition:color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tel-icon,.mail-icon{
+  transition:fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .mail-icon,.tel-icon{
   fill: var(--color-grey);
   margin-right: 10px;
   margin-left: 30px;
   
 }
+
 .mail-tel-cont .link:hover{
   color:var(--color-hover);
 }
@@ -431,15 +444,23 @@ html{
   justify-content: space-between;
 }
 .title-image{
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 16px;
-text-align: center;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-/* color: #FFFFFF; */
-color: var(--color-black);
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  top: 224px;
+  width: 100%;
+  padding: 27px ;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.job-title{
+  position: relative;
+  overflow: hidden ;
 }
 
 /*---------------Наша команда--------*/
@@ -723,4 +744,45 @@ img{
 }
 .img-p:hover .projects-text{
   transform: translateY(0);
+}
+.backdrop{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms, visibility 250ms;
+}
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 528px;
+  height: 581px;
+  background-color:var(--color-white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close{
+
+}
+.modal-close{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* box-sizing: border-box; */
+  border-radius: 50%
+}
+.is-hidden{
+  opacity: 0;
+  visibility:hidden;
+  pointer-events: none;
 }
