@@ -30,11 +30,13 @@ html{
   }
  .header-container{
   display: flex;
-  border-bottom: 1px solid #ececec;
   align-items: center;
   color:var(--color-grey);
  }
+.header{
+  border-bottom: 1px solid #ececec;
 
+}
 .container{ 
   width: 1200px;
   padding-left: 15px;
@@ -87,34 +89,34 @@ html{
 }
 
 .menu {
-  width: 294px;
+  /* width: 294px; */
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--color-black);
-  cursor: pointer;
-  display: block;
   display: flex;
-  justify-content: space-between;
-  padding-top: 32px;
-  padding-bottom: 12px; 
+  align-items:center;
+  /* padding-top: 32px; */
+  /* padding-bottom: 12px;  */
 }
 .menu-link{
-  margin: 0 auto;
+  display: block;
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
-  transition:color 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-black);
+
 }
 
 .menu-link:not(:last-child){
   padding-right: 0;
 }
-
-.menu .link {
-  color: var(--color-black);
+li{
+  margin-right: 50px;
 }
+
 .menu .link:active,
 .menu .link:hover,
 .menu .link:focus,
@@ -123,16 +125,17 @@ html{
 
 }
 .menu-link.current::after{
-  display: inline-block; 
-  position:relative;
+  display:block; 
+  position:absolute;
   content: ''; 
   left: 0;
-  top: 18.5px;
+  bottom: 0;
   height: 4px;
   width: 100%;
   border-radius: 2px;
   border-bottom:  4px  solid #2196F3 ;
   margin:0 auto;
+  transform: translateY(1px);
 }
 
 .menu-link.current{
@@ -146,39 +149,45 @@ html{
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  cursor: pointer;
   margin-left: auto;
   display: flex;
+  align-items: center;
   
 }
-.contacts-mail,.contacts-tel{
-  transition:color 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.contacts-link{
+  display: flex;
+  align-items: center;
+  
+  color:currentColor;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .tel-icon,.mail-icon{
-  transition:fill 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition:fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .mail-icon,.tel-icon{
   fill: var(--color-grey);
   margin-right: 10px;
-  margin-left: 30px;
-  
-}
 
-.mail-tel-cont .link:hover{
-  color:var(--color-hover);
-}
-.mail-tel-cont:hover .mail-icon{
-  fill:var(--color-hover);
-}
-.contacts-mail,.contacts-tel{
-  margin: 0 auto;
-  padding-top: 32px;
-  padding-bottom: 32px;
   
 }
-.mail-tel-cont .link{
+.contacts-item{
+  margin-right: 30px;
+}
+.contacts-item:last-child{
+  margin-right:0px;
+}
+/*.mail-tel-cont .link:hover{
+  color:var(--color-hover);
+}*/
+/*.mail-tel-cont:hover .mail-icon{
+  fill:var(--color-hover);
+}*/
+
+/*.mail-tel-cont .link{
   display: flex;
   align-items: center;
   color: var(--color-grey);
@@ -194,7 +203,7 @@ html{
 }
 .mail-mail-cont:hover .tel-icon{
   fill:var(--color-hover);
-}
+}*/
 
 /*------------------footer--------------------*/
 .footer{
@@ -215,8 +224,7 @@ html{
   line-height: 1.71;
   letter-spacing: 0.03em;
   padding-bottom: 9px;
-  transition:color 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-map.link {
   color: var(--color-white);
@@ -295,8 +303,7 @@ html{
   border-radius: 50%;
 }
 .footer-social-icon{
-  transition:fill 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition:fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -361,8 +368,7 @@ html{
   cursor: pointer;
   border-radius: 4px;
   border: none;
-  transition:background 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition:background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-order-service:active,
 .btn-order-service:hover,
@@ -540,8 +546,7 @@ html{
   border-radius: 50%;
 }
 .team-social-icon{
-  transition:fill 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition:fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-icon{
   fill: #afb1b8;
@@ -590,8 +595,7 @@ html{
   fill: #AFB1B8;
 }
 .brand-icon{
-  transition:fill 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition:fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .brand-item:last-child{
   margin-right: 0px
@@ -707,9 +711,7 @@ img{
 }
 .img-p{
   margin: 0 30px 30px 0;
-  transition:box-shadow 250ms ;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  
+  transition:box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .img-p:hover{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
